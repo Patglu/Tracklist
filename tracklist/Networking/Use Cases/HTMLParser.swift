@@ -1,7 +1,7 @@
 import Foundation
 import SwiftSoup
 
-class DefaultHTMLParser: HTMLParser {
+class HTMLParser: HTMLParserable {
     
     func parseHTML(html: String) -> [AlbumInfo] {
         var albums = [AlbumInfo]()

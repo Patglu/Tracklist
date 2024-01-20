@@ -1,6 +1,6 @@
 import Foundation
 
-class DefaultHTMLContentFetcher: HTMLContentFetcher {
+class HTMLContentFetcher: HTMLContentFetcherable {
     func fetchHTMLContent(urlString: String, completion: @escaping (String?) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(nil)

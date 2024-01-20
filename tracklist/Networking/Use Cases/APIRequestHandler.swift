@@ -7,7 +7,7 @@ enum NetworkError: Error {
     case decodingError
 }
 
-class DefaultAPIRequestHandler: APIRequestHandler {
+class APIRequestHandler: APIRequestHandlerable {
     private let urlSession = URLSession.shared
     private let baseUrl = "https://pitchfork.com/api/v2/search/"
     private let albumOfTheYearUrl = "https://www.albumoftheyear.org/releases/this-week/singles/"
