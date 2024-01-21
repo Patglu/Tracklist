@@ -1,11 +1,22 @@
 import Foundation
-    /*
-     Add protocols
-     Use uses cases that follow the clean architecture
-     */
-class DataManager: ObservableObject {
-    static let shared = DataManager()
+
+protocol HomeDataManagerProtocol: ObservableObject{
+    var tracksResponse: TracksResponse? { get }
+    var weeklySingles: [AlbumInfo] { get }
+    var weeklyAlbums: [AlbumInfo] { get }
+    var albumDetail: AlbumDetail? { get }
+
+    func fetchTracksData(start: Int, completion: @escaping (Bool, Error?) -> Void)
+    func getWeeklySinglesData()
+    func getWeeklyAlbumsData()
+    func getTrackItem(at index: Int) -> TrackItem?
+    func getTitleArtistAndStandardSizes() -> [(title: String, artistName: String, standardSizeURL: String)]
+}
+
+class HomeDataManager: HomeDataManagerProtocol {
+    static let shared = HomeDataManager()
     private let networkManager = NetworkManager.shared
+    
     @Published var tracksResponse: TracksResponse?
     @Published var weeklySingles = [AlbumInfo]()
     @Published var weeklyAlbums = [AlbumInfo]()
@@ -43,7 +54,7 @@ class DataManager: ObservableObject {
         }
     }
     
-    func getWeeklySinglesData(){
+   internal func getWeeklySinglesData(){
         let weeklhySingles = "https://www.albumoftheyear.org/releases/this-week/singles/"
         NetworkManager.shared.fetchHTMLContent(urlString: weeklhySingles) { htmlContent in
             DispatchQueue.main.async {
@@ -55,7 +66,7 @@ class DataManager: ObservableObject {
         }
     }
     
-    func getWeeklyAlbumsData(){
+    internal func getWeeklyAlbumsData(){
         let weeklyAlbums = "https://www.albumoftheyear.org/releases/this-week/"
             networkManager.fetchHTMLContent(urlString: weeklyAlbums) { htmlContent in
             DispatchQueue.main.async {
@@ -67,14 +78,14 @@ class DataManager: ObservableObject {
         }
     }
     
-    func getTrackItem(at index: Int) -> TrackItem? {
+    internal func getTrackItem(at index: Int) -> TrackItem? {
         return tracksResponse?.results?.list?[index]
     }
 }
 
-extension DataManager {
+extension HomeDataManager {
     /*use case*/
-    func getTitleArtistAndStandardSizes() -> [(title: String, artistName: String, standardSizeURL: String)] {
+    internal func getTitleArtistAndStandardSizes() -> [(title: String, artistName: String, standardSizeURL: String)] {
         guard let trackItems = tracksResponse?.results?.list else {
             return []
         }

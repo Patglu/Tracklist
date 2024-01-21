@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61018BFA2B5C255B00861400 /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 61018BF92B5C255B00861400 /* NeedleFoundation */; };
+		61018BFC2B5C255B00861400 /* NeedleFoundationTest in Frameworks */ = {isa = PBXBuildFile; productRef = 61018BFB2B5C255B00861400 /* NeedleFoundationTest */; };
+		61018C032B5C30F900861400 /* TrackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61018C022B5C30F900861400 /* TrackComponent.swift */; };
+		61018C052B5C321400861400 /* TrackScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61018C042B5C321400861400 /* TrackScrollViewModel.swift */; };
+		61018C082B5C379D00861400 /* HomeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61018C072B5C379D00861400 /* HomeComponent.swift */; };
+		61018C0A2B5C37E400861400 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61018C092B5C37E400861400 /* HomeViewModel.swift */; };
+		61018C0D2B5C3F7A00861400 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61018C0C2B5C3F7A00861400 /* RootComponent.swift */; };
+		61018C132B5C4CEF00861400 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61018C122B5C4CEF00861400 /* RootViewModel.swift */; };
+		61018C152B5C4D0200861400 /* RooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61018C142B5C4D0200861400 /* RooView.swift */; };
 		611347062B4B148500D651CD /* NetworkingProtocols .swift in Sources */ = {isa = PBXBuildFile; fileRef = 611347052B4B148500D651CD /* NetworkingProtocols .swift */; };
 		6113470A2B4B157900D651CD /* HTMLContentFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611347092B4B157900D651CD /* HTMLContentFetcher.swift */; };
 		6113470C2B4B15BD00D651CD /* APIRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6113470B2B4B15BD00D651CD /* APIRequestHandler.swift */; };
@@ -23,7 +32,7 @@
 		61A472F72B014BCE00623BC3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472F62B014BCE00623BC3 /* UIColor+Extension.swift */; };
 		61A472FA2B014EF500623BC3 /* TrackResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472F92B014EF500623BC3 /* TrackResponseModel.swift */; };
 		61A472FC2B014F3C00623BC3 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472FB2B014F3C00623BC3 /* NetworkingManager.swift */; };
-		61A472FF2B01538C00623BC3 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472FE2B01538C00623BC3 /* DataManager.swift */; };
+		61A472FF2B01538C00623BC3 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472FE2B01538C00623BC3 /* HomeDataManager.swift */; };
 		61A99A0A2B094E0300ED22A7 /* AlbumInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A99A092B094E0300ED22A7 /* AlbumInfoModel.swift */; };
 		61A99A0D2B094EF000ED22A7 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 61A99A0C2B094EF000ED22A7 /* SwiftSoup */; };
 		61A99A102B0A4EEE00ED22A7 /* TrackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */; };
@@ -33,6 +42,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61018C022B5C30F900861400 /* TrackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackComponent.swift; sourceTree = "<group>"; };
+		61018C042B5C321400861400 /* TrackScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackScrollViewModel.swift; sourceTree = "<group>"; };
+		61018C072B5C379D00861400 /* HomeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponent.swift; sourceTree = "<group>"; };
+		61018C092B5C37E400861400 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		61018C0C2B5C3F7A00861400 /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
+		61018C122B5C4CEF00861400 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		61018C142B5C4D0200861400 /* RooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RooView.swift; sourceTree = "<group>"; };
 		611347052B4B148500D651CD /* NetworkingProtocols .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkingProtocols .swift"; sourceTree = "<group>"; };
 		611347092B4B157900D651CD /* HTMLContentFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLContentFetcher.swift; sourceTree = "<group>"; };
 		6113470B2B4B15BD00D651CD /* APIRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestHandler.swift; sourceTree = "<group>"; };
@@ -50,7 +66,7 @@
 		61A472F62B014BCE00623BC3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		61A472F92B014EF500623BC3 /* TrackResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackResponseModel.swift; sourceTree = "<group>"; };
 		61A472FB2B014F3C00623BC3 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
-		61A472FE2B01538C00623BC3 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		61A472FE2B01538C00623BC3 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		61A99A092B094E0300ED22A7 /* AlbumInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoModel.swift; sourceTree = "<group>"; };
 		61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackScrollView.swift; sourceTree = "<group>"; };
 		61A99A132B0A525F00ED22A7 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
@@ -63,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61018BFA2B5C255B00861400 /* NeedleFoundation in Frameworks */,
+				61018BFC2B5C255B00861400 /* NeedleFoundationTest in Frameworks */,
 				61A99A0D2B094EF000ED22A7 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +88,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61018C012B5C301200861400 /* TrackScroll */ = {
+			isa = PBXGroup;
+			children = (
+				61018C022B5C30F900861400 /* TrackComponent.swift */,
+				61018C042B5C321400861400 /* TrackScrollViewModel.swift */,
+				61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */,
+			);
+			path = TrackScroll;
+			sourceTree = "<group>";
+		};
+		61018C062B5C378E00861400 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				61018C072B5C379D00861400 /* HomeComponent.swift */,
+				61018C092B5C37E400861400 /* HomeViewModel.swift */,
+				61A472F02B01419500623BC3 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		61018C0B2B5C3F6600861400 /* Root  */ = {
+			isa = PBXGroup;
+			children = (
+				61018C0C2B5C3F7A00861400 /* RootComponent.swift */,
+				61018C122B5C4CEF00861400 /* RootViewModel.swift */,
+				61018C142B5C4D0200861400 /* RooView.swift */,
+			);
+			path = "Root ";
+			sourceTree = "<group>";
+		};
 		611347072B4B154200D651CD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +171,13 @@
 		61A472E02B01410900623BC3 /* tracklist */ = {
 			isa = PBXGroup;
 			children = (
+				61018C0B2B5C3F6600861400 /* Root  */,
+				61018C062B5C378E00861400 /* Home */,
+				61018C012B5C301200861400 /* TrackScroll */,
 				6113470F2B4B18E300D651CD /* Repositories */,
 				61532E6E2B16674200459F22 /* ViewModel */,
 				61A99A0E2B0A4ECA00ED22A7 /* ReusableComponenets */,
-				61A472FD2B01537600623BC3 /* Manager */,
+				61A472FD2B01537600623BC3 /* Managers */,
 				61A472F82B014EE400623BC3 /* Model */,
 				61A472F52B014B1400623BC3 /* Extension */,
 				61A472F42B01496000623BC3 /* Networking */,
@@ -151,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				61A99A122B0A523C00ED22A7 /* DetailViews */,
-				61A99A112B0A521200ED22A7 /* HomeView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,13 +234,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		61A472FD2B01537600623BC3 /* Manager */ = {
+		61A472FD2B01537600623BC3 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				61A472FE2B01538C00623BC3 /* DataManager.swift */,
+				61A472FE2B01538C00623BC3 /* HomeDataManager.swift */,
 				6196CF1C2B0A5CC700121470 /* DetailViewDataManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		61A99A0E2B0A4ECA00ED22A7 /* ReusableComponenets */ = {
@@ -198,17 +248,8 @@
 			children = (
 				61C7850A2B04DBCE00C5E55D /* popOver.swift */,
 				61A472F22B01483D00623BC3 /* HighlightedText.swift */,
-				61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */,
 			);
 			path = ReusableComponenets;
-			sourceTree = "<group>";
-		};
-		61A99A112B0A521200ED22A7 /* HomeView */ = {
-			isa = PBXGroup;
-			children = (
-				61A472F02B01419500623BC3 /* HomeView.swift */,
-			);
-			path = HomeView;
 			sourceTree = "<group>";
 		};
 		61A99A122B0A523C00ED22A7 /* DetailViews */ = {
@@ -229,6 +270,7 @@
 				61A472DA2B01410900623BC3 /* Sources */,
 				61A472DB2B01410900623BC3 /* Frameworks */,
 				61A472DC2B01410900623BC3 /* Resources */,
+				61018BFD2B5C2B7800861400 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -237,6 +279,8 @@
 			name = tracklist;
 			packageProductDependencies = (
 				61A99A0C2B094EF000ED22A7 /* SwiftSoup */,
+				61018BF92B5C255B00861400 /* NeedleFoundation */,
+				61018BFB2B5C255B00861400 /* NeedleFoundationTest */,
 			);
 			productName = tracklist;
 			productReference = 61A472DE2B01410900623BC3 /* tracklist.app */;
@@ -268,6 +312,7 @@
 			mainGroup = 61A472D52B01410900623BC3;
 			packageReferences = (
 				61A99A0B2B094EF000ED22A7 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+				61018BF82B5C255B00861400 /* XCRemoteSwiftPackageReference "needle" */,
 			);
 			productRefGroup = 61A472DF2B01410900623BC3 /* Products */;
 			projectDirPath = "";
@@ -290,6 +335,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		61018BFD2B5C2B7800861400 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			dependencyFile = "$(DERIVED_FILES_DIR)/$(INPUT_FILE_PATH).d";
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "export SOURCEKIT_LOGGING=0 && needle generate $SRCROOT/$TARGETNAME/NeedleGenerated.swift $SRCROOT/$TARGETNAME\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		61A472DA2B01410900623BC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -297,22 +363,29 @@
 			files = (
 				61A472F12B01419500623BC3 /* HomeView.swift in Sources */,
 				61A472E42B01410900623BC3 /* ContentView.swift in Sources */,
+				61018C132B5C4CEF00861400 /* RootViewModel.swift in Sources */,
 				611347062B4B148500D651CD /* NetworkingProtocols .swift in Sources */,
+				61018C0A2B5C37E400861400 /* HomeViewModel.swift in Sources */,
 				61A472FA2B014EF500623BC3 /* TrackResponseModel.swift in Sources */,
 				61A99A102B0A4EEE00ED22A7 /* TrackScrollView.swift in Sources */,
 				61A99A162B0A54DF00ED22A7 /* AlbumDetailModel.swift in Sources */,
 				61A99A0A2B094E0300ED22A7 /* AlbumInfoModel.swift in Sources */,
 				6113470C2B4B15BD00D651CD /* APIRequestHandler.swift in Sources */,
+				61018C152B5C4D0200861400 /* RooView.swift in Sources */,
+				61018C032B5C30F900861400 /* TrackComponent.swift in Sources */,
+				61018C082B5C379D00861400 /* HomeComponent.swift in Sources */,
 				61A472E22B01410900623BC3 /* tracklistApp.swift in Sources */,
 				61A472F32B01483D00623BC3 /* HighlightedText.swift in Sources */,
 				611347112B4B18FF00D651CD /* AlbumDetailRepository.swift in Sources */,
+				61018C0D2B5C3F7A00861400 /* RootComponent.swift in Sources */,
 				61A99A142B0A525F00ED22A7 /* AlbumDetailView.swift in Sources */,
 				6196CF1D2B0A5CC700121470 /* DetailViewDataManager.swift in Sources */,
 				6113470A2B4B157900D651CD /* HTMLContentFetcher.swift in Sources */,
 				61A472F72B014BCE00623BC3 /* UIColor+Extension.swift in Sources */,
+				61018C052B5C321400861400 /* TrackScrollViewModel.swift in Sources */,
 				61A472FC2B014F3C00623BC3 /* NetworkingManager.swift in Sources */,
 				6113470E2B4B164C00D651CD /* HTMLParser.swift in Sources */,
-				61A472FF2B01538C00623BC3 /* DataManager.swift in Sources */,
+				61A472FF2B01538C00623BC3 /* HomeDataManager.swift in Sources */,
 				61C7850B2B04DBCE00C5E55D /* popOver.swift in Sources */,
 				61532E702B16675C00459F22 /* AlbumDetailViewModel.swift in Sources */,
 			);
@@ -522,6 +595,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		61018BF82B5C255B00861400 /* XCRemoteSwiftPackageReference "needle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/needle.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		61A99A0B2B094EF000ED22A7 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -533,6 +614,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		61018BF92B5C255B00861400 /* NeedleFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61018BF82B5C255B00861400 /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundation;
+		};
+		61018BFB2B5C255B00861400 /* NeedleFoundationTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61018BF82B5C255B00861400 /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundationTest;
+		};
 		61A99A0C2B094EF000ED22A7 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 61A99A0B2B094EF000ED22A7 /* XCRemoteSwiftPackageReference "SwiftSoup" */;

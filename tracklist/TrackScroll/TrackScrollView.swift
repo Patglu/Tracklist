@@ -1,15 +1,12 @@
 import SwiftUI
 
-struct TrackScrollView: View {
-    var tracks: [AlbumInfo]
-    var header: String
-    
-    @State private var albumDetail = AlbumDetail(title: "" , artist: "", releaseYear: "", genre: [], coverImageUrl: "", criticScore: 0, userScore: 0, trackList: [])
+struct TrackScrollView<ViewModel>: View where ViewModel: TrackScrollViewModelProtocol {
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                ForEach(tracks) { trackItem in
+                ForEach(viewModel.tracks) { trackItem in
                     NavigationLink(value: trackItem) {
                         VStack {
                             AsyncImage(url: URL(string: trackItem.imageUrl)) { image in
@@ -30,11 +27,11 @@ struct TrackScrollView: View {
         }
         .frame(height: 300)
         .overlay(alignment: .topLeading) {
-            HighlightedText(text: header)
+            HighlightedText(text: viewModel.header)
         }
     }
 }
 
 #Preview {
-    TrackScrollView(tracks: [AlbumInfo](), header: "New tracks")
+    TrackScrollView(viewModel: TrackScrollViewModel(tracks: [], header: ""))
 }
