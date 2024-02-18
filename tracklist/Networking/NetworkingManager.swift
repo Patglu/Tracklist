@@ -9,8 +9,6 @@ class NetworkManager {
      The view talks to the viewmodel to get 
      */
     static let shared = NetworkManager()
-    
-    private let urlSession = URLSession.shared
     private let htmlContentFetcher: HTMLContentFetcherable
     private let apiRequestHandler: APIRequestHandlerable
     private let htmlParser: HTMLParserable

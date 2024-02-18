@@ -4,29 +4,38 @@ struct AlbumDetailView: View {
     let albumInfo: AlbumInfo
     @StateObject var viewModel: AlbumDetailViewModel = AlbumDetailViewModel()
     
-    
-    
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false){
             VStack{
                 AsyncImage(url: URL(string: viewModel.albumDetail?.coverImageUrl ?? "")) { image in
                     image.resizable()
+                        .aspectRatio(contentMode: .fill)
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(height: 450)
+                .frame(height: 550)
+                .frame(minWidth: 0, maxWidth: .infinity)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.black)
-                .overlay(alignment: .bottomTrailing){
-                    Text(viewModel.albumDetail?.releaseYear ?? "")
-                        .padding(8)
-                        .bold()
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundStyle(.white)
+                .overlay(alignment: .bottom){
+                    HStack(alignment: .top){
+                        VStack(alignment: .leading){
+                            Text(viewModel.albumDetail?.artist ?? "")
+                                .font(.headline)
+                            Text(viewModel.albumDetail?.title ?? "")
+                                .font(.title2)
+                                .bold()
                         }
-                        .padding()
-                        .padding(.bottom,25)
+                        Spacer()
+                        Text(viewModel.albumDetail?.releaseYear ?? "")
+                            
+                    }
+                    .font(.callout)
+                    .padding()
+                    .frame(maxWidth: .infinity,alignment:.leading)
+                    .background(.ultraThinMaterial,
+                                in: RoundedRectangle(cornerRadius: 8,style: .continuous))
+                    .cornerRadius(8)
                 }
                 .overlay(alignment: .bottom) {
                     ScrollView(.horizontal, showsIndicators: false){
@@ -41,26 +50,39 @@ struct AlbumDetailView: View {
                         }
                     }
                 }
-                Text(viewModel.albumDetail?.title ?? "")
-                    .frame(height: 70)
-                    .font(.system(size: 500))
-                    .minimumScaleFactor(0.01)
-                    .bold()
-                HStack{
-                    Text(viewModel.albumDetail?.artist ?? "")
-                }
-//                ForEach(viewModel.albumDetail?.trackList ?? [], id: \.title) { track in
-//                    HStack{
-//                        Text("\(track.number)")
-//                            .bold()
-//                            .padding(.vertical,5)
-//                        Text(track.title)
-//                        Spacer()
-//                        Text(track.length)
-//                    }
-//                    .padding(10)
-//                }
+                
+                //                ForEach(viewModel.albumDetail?.trackList ?? [], id: \.title) { track in
+                //                    HStack{
+                //                        Text("\(track.number)")
+                //                            .bold()
+                //                            .padding(.vertical,5)
+                //                        Text(track.title)
+                //                        Spacer()
+                //                        Text(track.length)
+                //                    }
+                //                    .padding(10)
+                //                }
             }
+            VStack {
+                Text("Similar artits")
+                    .foregroundStyle(.white)
+                    .font(.title2)
+                    .bold()
+                ScrollView(.horizontal) {
+                    LazyHStack{
+                        ForEach(viewModel.similarArtists, id: \.name) { artist in
+                            VStack{
+                                Circle()
+                                Text(artist.name)
+                                    .font(.caption)
+                                    .lineLimit(1)
+                            }
+                            .frame(width: 100, height: 100, alignment: .center)
+                        }
+                    }
+                }
+            }
+            .foregroundStyle(.white)
         }
         .ignoresSafeArea(edges: .top)
         .onAppear{
@@ -69,7 +91,11 @@ struct AlbumDetailView: View {
     }
 }
 //
-//#Preview {
-////    AlbumDetailView(albumDetail: .example)
-////    AlbumDetailView(albumInfo: AlbumInfo)
-//}
+#Preview {
+    ZStack{
+        Color.black
+            .ignoresSafeArea()
+        AlbumDetailView(albumInfo: AlbumInfo.firstElement)
+            .environment(\.colorScheme, .dark)
+    }
+}

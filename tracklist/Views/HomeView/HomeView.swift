@@ -9,14 +9,14 @@ struct HomeView: View {
             ZStack{
                 Color(UIColor(hex: "#080806"))
                     .ignoresSafeArea()
-                ScrollView{
-                    Text("Tracklist")
-                        .foregroundStyle(.white)
-                    TrackScrollView(tracks: dataManager.weeklySingles.shuffled(),
-                                    header: "New Singles")
-                    TrackScrollView(tracks: dataManager.weeklyAlbums,
-                                    header: "New Albums")
-                }
+                    ScrollView(.vertical){
+                        TrackScrollView(tracks: dataManager.weeklySingles.prefix(12).shuffled(),
+                                        header: "New Singles")
+                        TrackScrollView(tracks: dataManager.weeklyAlbums.prefix(12).shuffled(),
+                                        header: "New Albums")
+//                        .frame(height: 300)
+                    }
+                
             }
             .navigationDestination(for: AlbumInfo.self) { album in
                 AlbumDetailView(albumInfo: album)

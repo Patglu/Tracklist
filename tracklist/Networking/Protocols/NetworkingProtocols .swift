@@ -12,3 +12,5 @@ protocol HTMLParserable {
     func parseHTML(html: String) -> [AlbumInfo]
     func parseAlbumDetails(from html: String) -> AlbumDetail?
 }
+
+
