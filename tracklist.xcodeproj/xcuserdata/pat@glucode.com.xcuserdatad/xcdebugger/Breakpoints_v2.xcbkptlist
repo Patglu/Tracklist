@@ -14,8 +14,8 @@
             filePath = "tracklist/Manager/DataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "getWeeklyAlbumsData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "tracklist/Manager/DataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "getWeeklySinglesData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -98,6 +98,70 @@
                   offsetFromSymbolStart = "800">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77F64E6C-290A-494D-BC92-880BAC832EA9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tracklist/Networking/MetacriticNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "parseUpcomingReleases(htmlContent:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "77F64E6C-290A-494D-BC92-880BAC832EA9 - 1456dbc3ec37e889"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tracklist.MetacriticNetworking.parseHTML(html: Swift.String) -&gt; ()"
+                  moduleName = "tracklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pat@glucode.com/Documents/GitHub/tracklist/tracklist/Networking/MetacriticNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "77F64E6C-290A-494D-BC92-880BAC832EA9 - 364c72d54da5d4ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tracklist.MetacriticNetworking.parseUpcomingReleases(htmlContent: Swift.String) -&gt; Swift.Array&lt;tracklist.UpcomingRelease&gt;"
+                  moduleName = "tracklist"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pat@glucode.com/Documents/GitHub/tracklist/tracklist/Networking/MetacriticNetworking.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E21309E-95B5-4A2D-BBE8-9D40696CC278"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tracklist/Networking/MetacriticNetworking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "fetchHTMLContent(urlString:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

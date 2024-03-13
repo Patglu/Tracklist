@@ -5,7 +5,7 @@ import Foundation
      */
 class DataManager: ObservableObject {
     static let shared = DataManager()
-    private let networkManager = NetworkManager.shared
+    private let networkManager = NetworkManager(htmlContentFetcher: HTMLContentFetcher(), apiRequestHandler: APIRequestHandler(), htmlParser: HTMLParser())
     @Published var tracksResponse: TracksResponse?
     @Published var weeklySingles = [AlbumInfo]()
     @Published var weeklyAlbums = [AlbumInfo]()
@@ -24,7 +24,7 @@ class DataManager: ObservableObject {
     }
     
     func fetchTracksData(start: Int, completion: @escaping (Bool, Error?) -> Void) {
-        NetworkManager.shared.fetchTracks(start: start) { result in
+        networkManager.fetchTracks(start: start) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let newResponse):
@@ -43,12 +43,21 @@ class DataManager: ObservableObject {
         }
     }
     
+    func getHomeViewCardData(card: HomeViewCardFeature) -> [AlbumInfo] {
+        switch card {
+        case .singles:
+            return self.weeklySingles
+        case .albums:
+            return self.weeklyAlbums
+        }
+    }
+    
     func getWeeklySinglesData(){
         let weeklhySingles = "https://www.albumoftheyear.org/releases/this-week/singles/"
-        NetworkManager.shared.fetchHTMLContent(urlString: weeklhySingles) { htmlContent in
+        networkManager.fetchHTMLContent(urlString: weeklhySingles) { htmlContent in
             DispatchQueue.main.async {
                 if let html = htmlContent {
-                    self.weeklySingles = NetworkManager.shared.parseHTML(html: html)
+                    self.weeklySingles = self.networkManager.parseHTML(html: html)
                     // Use albumData as needed in your app
                 }
             }

@@ -8,6 +8,15 @@
         "revision" : "8b6cf29eead8841a1fa7822481cb3af4ddaadba6",
         "version" : "2.6.1"
       }
+    },
+    {
+      "identity" : "variablur",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daprice/Variablur.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "29fdd8c5e2721c1706b0ed8008d516f8d8d75879"
+      }
     }
   ],
   "version" : 2

@@ -13,13 +13,13 @@ extension AlbumInfo {
     static var firstElement: AlbumInfo = {
         AlbumInfo(
             id: UUID(),
-            artistTitle: "Kerli",
-            artistUrl:  "/artist/1698-kerli/",
-            albumTitle: "The Witching Hour",
-            albumUrl:  "/album/877232-kerli-the-witching-hour.php",
-            imageUrl: "https://cdn2.albumoftheyear.org/400x/album/877232-the-witching-hour_232633.jpg"
+            artistTitle: "Real Estate",
+            artistUrl:  "/artist/683-real-estate/",
+            albumTitle: "Daniel",
+            albumUrl:  "/album/806296-real-estate-daniel.php",
+            imageUrl: "https://i.scdn.co/image/ab67616d0000b27312c80c8035af957851767fd1"
         )
     }()
     
-    static var repeatedElements: [AlbumInfo] = Array(repeating: AlbumInfo.firstElement, count: 5) 
+    static var repeatedElements: [AlbumInfo] = Array(repeating: AlbumInfo.firstElement, count: 12) 
 }

@@ -8,15 +8,20 @@ class NetworkManager {
      The view model gets everything from the repo
      The view talks to the viewmodel to get 
      */
-    static let shared = NetworkManager()
+//    static let shared = NetworkManager()
     private let htmlContentFetcher: HTMLContentFetcherable
     private let apiRequestHandler: APIRequestHandlerable
     private let htmlParser: HTMLParserable
     
-    private init(){
-        self.htmlContentFetcher = HTMLContentFetcher()
-        self.apiRequestHandler = APIRequestHandler()
-        self.htmlParser =  HTMLParser()
+    /*
+     
+     */
+     init(htmlContentFetcher: HTMLContentFetcherable,
+                 apiRequestHandler:APIRequestHandlerable,
+                 htmlParser: HTMLParserable){
+        self.htmlContentFetcher = htmlContentFetcher // Change the rest
+        self.apiRequestHandler = apiRequestHandler
+        self.htmlParser = htmlParser
     }
     
     

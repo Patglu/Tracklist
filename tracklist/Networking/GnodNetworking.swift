@@ -21,11 +21,10 @@ class GnodNetworking {
                 return String(data: output.data, encoding: .utf8) ?? ""
             }
             .tryMap { htmlContent -> [(name: String, url: String)] in
-                // Parse the HTML content to extract artist names and URLs
                 try self.parseHTML(htmlContent)
             }
-            .receive(on: DispatchQueue.main) // Ensure the publisher sends events on the main thread
-            .eraseToAnyPublisher() // Erase to AnyPublisher for a cleaner external interface
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
     
     // Private function to parse HTML content for artist names and URLs

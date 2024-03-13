@@ -1,8 +1,15 @@
 import Foundation
 import Combine
+/*
+ Completion handlers should be used when a parent needs an action completed and a child view needs to completion an action based on parents view response to 
+ */
+/*
+ Move the networkManager : NetworkManager to a html content repository to get all the data from the networking manager
+ Gateway is inited in the networking repository
+ */
 
 class AlbumDetailViewModel: ObservableObject{
-    private let networkManager = NetworkManager.shared
+    private let networkManager : NetworkManager
     private let networking = GnodNetworking()
     private var cancellables = Set<AnyCancellable>()
      
@@ -16,8 +23,9 @@ class AlbumDetailViewModel: ObservableObject{
     }
     
     
-    init(albumDetail: AlbumDetail? = nil) {
+    init(albumDetail: AlbumDetail? = nil, networkManager:NetworkManager) {
         self.albumDetail = albumDetail
+        self.networkManager = networkManager
     }
     /*
      Turn the albuminfo into albumdetail

@@ -6,6 +6,7 @@ struct HighlightedText: View {
     
     var body: some View {
         Text(text)
+            .foregroundStyle(.black)
             .padding(10)
             .background(
                 Rectangle()

@@ -2,73 +2,38 @@ import SwiftUI
 
 struct TrackScrollView: View {
     var tracks: [AlbumInfo]
-    var header: String
-    @State private var displayGrid = false // State to toggle between horizontal scroll and grid
     private var splitTracks: ([AlbumInfo], [AlbumInfo]) {
         let half = tracks.count / 2
         let evenTracks = Array(tracks.prefix(half))
         let oddTracks = Array(tracks.suffix(from: half))
         return (evenTracks, oddTracks)
     }
+    
     var body: some View {
         Group {
-            if !displayGrid {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack {
-                        ForEach(tracks.indices, id: \.self) { index in
-                            trackItemView(trackItem: tracks[index])
-                                .onAppear {
-                                    // Check if the current item's index is the trigger point to switch the layout
-                                    if index >= 6 {
-                                        withAnimation {
-                                            displayGrid = true
-                                        }
-                                        
-                                    }
-                                }
-                        }
-                    }
-                }
-                .frame(height: 300)
-            } else {
-                //                ScrollView(.vertical, showsIndicators: false) {
-                ScrollView {
-                    VStack {
-                        Text(header)
-                            .font(.headline)
-                            .padding()
-                        
-                        HStack(alignment: .top) {
-                            VStack{
-                                ForEach(splitTracks.0) { track in
-                                    trackItemView(trackItem: track)
-                                }
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVStack {
+                    HStack(alignment: .top) {
+                        VStack(spacing: 80){
+                            ForEach(splitTracks.0) { track in
+                                trackItemView(trackItem: track)
+                                    .padding(4)
                             }
-                            VStack{
-                                ForEach(splitTracks.1) { track in
-                                    trackItemView(trackItem: track)
-                                }
+                        }
+                        VStack(spacing: 40){
+                            ForEach(splitTracks.1) { track in
+                                trackItemView(trackItem: track)
+                                    .padding(4)
                             }
                         }
                     }
-                }
-                //                .frame(maxHeight: .infinity)
-            }
-        }
-        .padding(.horizontal)
-        .overlay(alignment: .topLeading) {
-            HStack{
-                HighlightedText(text: header) // Assuming HighlightedText is a custom View you have defined
-                Button{
-                    withAnimation {
-                        displayGrid.toggle()
-                    }
-                } label: {
-                    Text("Hide")
+                    .padding(.top, 45)
                 }
             }
+            .frame(maxHeight: .infinity)
+            .darkModePreview()
         }
-        .animation(.easeInOut, value: displayGrid)
+        
     }
     
     @ViewBuilder
@@ -89,12 +54,15 @@ struct TrackScrollView: View {
                 } placeholder: {
                     ProgressView()
                 }
-                .frame(width: 180, height: 250)
+                .frame(width: 160, height: 200)
                 .cornerRadius(8.0)
                 .overlay(alignment: .bottom){
                     VStack(alignment: .leading){
                         Text(trackItem.artistTitle)
                             .font(.headline)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                        
                         Text(trackItem.albumTitle)
                             .font(.caption)
                             .lineLimit(1)
@@ -116,7 +84,7 @@ struct TrackScrollView: View {
     ZStack{
         Color.black
             .ignoresSafeArea()
-        TrackScrollView(tracks: AlbumInfo.repeatedElements, header: "New tracks")
-            .padding()
+        TrackScrollView(tracks: AlbumInfo.repeatedElements)
+        //            .padding()
     }
 }

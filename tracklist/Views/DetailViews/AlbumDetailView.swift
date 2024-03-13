@@ -1,8 +1,9 @@
 import SwiftUI
+import Variablur
 
 struct AlbumDetailView: View {
     let albumInfo: AlbumInfo
-    @StateObject var viewModel: AlbumDetailViewModel = AlbumDetailViewModel()
+    @StateObject var viewModel: AlbumDetailViewModel = AlbumDetailViewModel(networkManager: NetworkManager(htmlContentFetcher: HTMLContentFetcher(), apiRequestHandler: APIRequestHandler(), htmlParser: HTMLParser()))
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
@@ -11,32 +12,37 @@ struct AlbumDetailView: View {
                     image.resizable()
                         .aspectRatio(contentMode: .fill)
                 } placeholder: {
-                    ProgressView()
+                    Color.black
+                }
+                .overlay(alignment:.bottom){
+                    LinearGradient(gradient:   Gradient(stops: [
+                        .init(color: .black, location: 0.0), // Start with black
+                        .init(color: Color.black.opacity(1), location: 0.68), // Transition point
+                        .init(color: .clear, location: 1.0) // Fully clear
+                    ]), startPoint: .bottom, endPoint: .top)
+                        .frame(height: 320)
+                        .blur(radius: 20)
+                        .offset(y: 190.0)
+                }
+                .variableBlur(radius:35) { geometryProxy, context in
+                    context.fill(
+                        Path(geometryProxy.frame(in: .local)),
+                        with: .linearGradient(
+                            Gradient(stops: [
+                                .init(color: .clear, location: 0.0), // Start with black
+                                .init(color: Color.clear.opacity(0.5), location: 0.8), // Transition point
+                                .init(color: .black, location: 1.0) // Fully clear
+                            ]),
+                            startPoint: .zero,
+                            endPoint: CGPoint(x: 0, y: geometryProxy.size.height)
+                        )
+                    )
                 }
                 .frame(height: 550)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.black)
-                .overlay(alignment: .bottom){
-                    HStack(alignment: .top){
-                        VStack(alignment: .leading){
-                            Text(viewModel.albumDetail?.artist ?? "")
-                                .font(.headline)
-                            Text(viewModel.albumDetail?.title ?? "")
-                                .font(.title2)
-                                .bold()
-                        }
-                        Spacer()
-                        Text(viewModel.albumDetail?.releaseYear ?? "")
-                            
-                    }
-                    .font(.callout)
-                    .padding()
-                    .frame(maxWidth: .infinity,alignment:.leading)
-                    .background(.ultraThinMaterial,
-                                in: RoundedRectangle(cornerRadius: 8,style: .continuous))
-                    .cornerRadius(8)
-                }
+                .drawingGroup()
                 .overlay(alignment: .bottom) {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
@@ -63,7 +69,23 @@ struct AlbumDetailView: View {
                 //                    .padding(10)
                 //                }
             }
-            VStack {
+            VStack(spacing: 20){
+                HStack(alignment: .top){
+                    VStack(alignment: .leading){
+                        Text(viewModel.albumDetail?.artist ?? "")
+                            .font(.headline)
+                        Text(viewModel.albumDetail?.title ?? "")
+                            .font(.title2)
+                            .bold()
+                    }
+                    Spacer()
+                    Text(viewModel.albumDetail?.releaseYear ?? "")
+                        
+                }
+                .font(.callout)
+                .padding()
+                .frame(maxWidth: .infinity,alignment:.leading)
+                .offset(y: -30.0)
                 Text("Similar artits")
                     .foregroundStyle(.white)
                     .font(.title2)
