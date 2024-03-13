@@ -21,6 +21,7 @@
 		61532E702B16675C00459F22 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61532E6F2B16675C00459F22 /* AlbumDetailViewModel.swift */; };
 		6157BD442B82724E00424947 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157BD432B82724E00424947 /* GlassView.swift */; };
 		6157BD462B82938A00424947 /* GnodNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157BD452B82938A00424947 /* GnodNetworking.swift */; };
+		618152DA2BA232A100785A04 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 618152D92BA232A100785A04 /* Kingfisher */; };
 		6196CF1D2B0A5CC700121470 /* DetailViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196CF1C2B0A5CC700121470 /* DetailViewDataManager.swift */; };
 		61A472E22B01410900623BC3 /* tracklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472E12B01410900623BC3 /* tracklistApp.swift */; };
 		61A472E42B01410900623BC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472E32B01410900623BC3 /* ContentView.swift */; };
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618152DA2BA232A100785A04 /* Kingfisher in Frameworks */,
 				61A99A0D2B094EF000ED22A7 /* SwiftSoup in Frameworks */,
 				613C57DC2B894CC600EB7967 /* Variablur in Frameworks */,
 			);
@@ -313,6 +315,7 @@
 			packageProductDependencies = (
 				61A99A0C2B094EF000ED22A7 /* SwiftSoup */,
 				613C57DB2B894CC600EB7967 /* Variablur */,
+				618152D92BA232A100785A04 /* Kingfisher */,
 			);
 			productName = tracklist;
 			productReference = 61A472DE2B01410900623BC3 /* tracklist.app */;
@@ -345,6 +348,7 @@
 			packageReferences = (
 				61A99A0B2B094EF000ED22A7 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				613C57DA2B894CC600EB7967 /* XCRemoteSwiftPackageReference "Variablur" */,
+				618152D82BA232A100785A04 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 61A472DF2B01410900623BC3 /* Products */;
 			projectDirPath = "";
@@ -626,6 +630,14 @@
 				kind = branch;
 			};
 		};
+		618152D82BA232A100785A04 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		61A99A0B2B094EF000ED22A7 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -641,6 +653,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 613C57DA2B894CC600EB7967 /* XCRemoteSwiftPackageReference "Variablur" */;
 			productName = Variablur;
+		};
+		618152D92BA232A100785A04 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618152D82BA232A100785A04 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		61A99A0C2B094EF000ED22A7 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;

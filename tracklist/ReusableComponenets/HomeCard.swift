@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 enum HomeViewCardFeature: String, Hashable, CaseIterable, Identifiable {
     var id: String{
@@ -100,16 +101,14 @@ struct HomeCard: View {
         }
     }
     func trackItemView(trackItem: AlbumInfo, width:CGFloat =  60, height:CGFloat = 60 ) -> some View {
-        AsyncImage(url: URL(string: trackItem.imageUrl)) { image in
-            image.resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: width, height: height)
-        } placeholder: {
-            ProgressView()
-                .frame(width: width, height: height)
-        }
-        .cornerRadius(8.0)
-        .foregroundStyle(.white)
+        KFImage.url(URL(string: trackItem.imageUrl))
+            .resizable()
+            .fade(duration: 0.25)
+            .aspectRatio(contentMode: .fill)
+            .frame(width: width, height: height)
+            .cornerRadius(8.0)
+            .foregroundStyle(.white)
+        
     }
 }
 

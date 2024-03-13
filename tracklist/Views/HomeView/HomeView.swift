@@ -11,27 +11,15 @@ struct HomeView: View {
                     .ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false){
                     NavigationLink(destination: UpcommingReleases()) {
-                        VStack(alignment: .leading){
-                            Text("Upcomming")
-                                .font(.system(size: 35))
-                                .bold()
-                            Text("Releases")
-                                .font(.title)
-                        }
-                        .foregroundStyle(.white)
-                        .padding(.leading)
-                        .frame(width: 350, height: 180, alignment: .leading)
-                        .background(RoundedRectangle(cornerRadius: 8)
-                            .fill(.grainGradient())
-                        )
+                        upcommingReleasesView
                     }
-
-                    Group{
-                        ForEach(HomeViewCardFeature.allCases){ card in
-                            HomeCard(tracks: dataManager.getHomeViewCardData(card: card), type: card)
-                        }
+                    ForEach(HomeViewCardFeature.allCases){ card in
+                        HomeCard(tracks: dataManager.getHomeViewCardData(card: card), type: card)
                     }
+//                    Text("More coming soon for this homeview")
+//                        .padding(.vertical)
                 }
+                .navigationTitle("HQ")
                 .padding(.horizontal)
             }
             .navigationDestination(for: AlbumInfo.self) { album in
@@ -41,6 +29,22 @@ struct HomeView: View {
                 TrackScrollView(tracks: dataManager.getHomeViewCardData(card: card))
             }
         }
+    }
+    
+    var upcommingReleasesView : some View {
+        VStack(alignment: .leading){
+            Text("Upcomming")
+                .font(.system(size: 35))
+                .bold()
+            Text("Releases")
+                .font(.title)
+        }
+        .foregroundStyle(.white)
+        .padding(.leading)
+        .frame(width: 350, height: 180, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 8)
+            .fill(.grainGradient())
+        )
     }
 }
 

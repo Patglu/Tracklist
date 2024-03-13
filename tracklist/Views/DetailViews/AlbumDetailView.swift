@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 import Variablur
 
 struct AlbumDetailView: View {
@@ -8,12 +9,7 @@ struct AlbumDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             VStack{
-                AsyncImage(url: URL(string: viewModel.albumDetail?.coverImageUrl ?? "")) { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Color.black
-                }
+                KFImage.url(URL(string: viewModel.albumDetail?.coverImageUrl ?? ""))
                 .overlay(alignment:.bottom){
                     LinearGradient(gradient:   Gradient(stops: [
                         .init(color: .black, location: 0.0), // Start with black

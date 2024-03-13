@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 struct TrackScrollView: View {
     var tracks: [AlbumInfo]
@@ -48,32 +49,30 @@ struct TrackScrollView: View {
     func trackItemView(trackItem: AlbumInfo) -> some View {
         NavigationLink(value: trackItem) {
             VStack {
-                AsyncImage(url: URL(string: trackItem.imageUrl)) { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(width: 160, height: 200)
-                .cornerRadius(8.0)
-                .overlay(alignment: .bottom){
-                    VStack(alignment: .leading){
-                        Text(trackItem.artistTitle)
-                            .font(.headline)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                        
-                        Text(trackItem.albumTitle)
-                            .font(.caption)
-                            .lineLimit(1)
-                            .truncationMode(.tail)
+                KFImage.url(URL(string: trackItem.imageUrl))
+                    .resizable()
+                    .fade(duration: 0.25)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 160, height: 200)
+                    .cornerRadius(8.0)
+                    .overlay(alignment: .bottom){
+                        VStack(alignment: .leading){
+                            Text(trackItem.artistTitle)
+                                .font(.headline)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                            
+                            Text(trackItem.albumTitle)
+                                .font(.caption)
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                        }
+                        .padding([.bottom,.top,.leading])
+                        .frame(maxWidth: .infinity,alignment:.leading)
+                        .background(.ultraThinMaterial,
+                                    in: RoundedRectangle(cornerRadius: 8,style: .continuous))
+                        .cornerRadius(8)
                     }
-                    .padding([.bottom,.top,.leading])
-                    .frame(maxWidth: .infinity,alignment:.leading)
-                    .background(.ultraThinMaterial,
-                                in: RoundedRectangle(cornerRadius: 8,style: .continuous))
-                    .cornerRadius(8)
-                }
             }
             .foregroundStyle(.white)
         }
