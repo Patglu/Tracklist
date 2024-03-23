@@ -5,7 +5,7 @@ import Variablur
 struct AlbumDetailView: View {
     let albumInfo: AlbumInfo
     @StateObject var viewModel: AlbumDetailViewModel = AlbumDetailViewModel(networkManager: NetworkManager(htmlContentFetcher: HTMLContentFetcher(), apiRequestHandler: APIRequestHandler(), htmlParser: HTMLParser()))
-    @StateObject var realmManager = RealmManager()
+    var realmManager : RealmManagable
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
@@ -123,7 +123,7 @@ struct AlbumDetailView: View {
     ZStack{
         Color.black
             .ignoresSafeArea()
-        AlbumDetailView(albumInfo: AlbumInfo.firstElement)
+        AlbumDetailView(albumInfo: AlbumInfo.firstElement, realmManager: RealmManager())
             .environment(\.colorScheme, .dark)
     }
 }

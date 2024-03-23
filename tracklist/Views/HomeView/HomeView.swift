@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var dataManager = DataManager.shared
+    @StateObject var realmManager = RealmManager()
     @State private var startIndex = 0
     var metacriticNetworking = MetacriticNetworking()
     var body: some View {
@@ -22,7 +23,7 @@ struct HomeView: View {
                 .padding(.horizontal)
             }
             .navigationDestination(for: AlbumInfo.self) { album in
-                AlbumDetailView(albumInfo: album)
+                AlbumDetailView(albumInfo: album, realmManager: realmManager)
             }
             .navigationDestination(for: HomeViewCardFeature.self) { card in
                 TrackScrollView(tracks: dataManager.getHomeViewCardData(card: card), title: card.rawValue)
