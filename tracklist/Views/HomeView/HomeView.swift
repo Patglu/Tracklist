@@ -16,8 +16,7 @@ struct HomeView: View {
                     ForEach(HomeViewCardFeature.allCases){ card in
                         HomeCard(tracks: dataManager.getHomeViewCardData(card: card), type: card)
                     }
-//                    Text("More coming soon for this homeview")
-//                        .padding(.vertical)
+
                 }
                 .navigationTitle("HQ")
                 .padding(.horizontal)
@@ -26,7 +25,7 @@ struct HomeView: View {
                 AlbumDetailView(albumInfo: album)
             }
             .navigationDestination(for: HomeViewCardFeature.self) { card in
-                TrackScrollView(tracks: dataManager.getHomeViewCardData(card: card))
+                TrackScrollView(tracks: dataManager.getHomeViewCardData(card: card), title: card.rawValue)
             }
         }
     }
@@ -34,7 +33,7 @@ struct HomeView: View {
     var upcommingReleasesView : some View {
         VStack(alignment: .leading){
             Text("Upcomming")
-                .font(.system(size: 35))
+                .font(.largeTitle)
                 .bold()
             Text("Releases")
                 .font(.title)

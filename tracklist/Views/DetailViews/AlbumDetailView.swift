@@ -5,6 +5,7 @@ import Variablur
 struct AlbumDetailView: View {
     let albumInfo: AlbumInfo
     @StateObject var viewModel: AlbumDetailViewModel = AlbumDetailViewModel(networkManager: NetworkManager(htmlContentFetcher: HTMLContentFetcher(), apiRequestHandler: APIRequestHandler(), htmlParser: HTMLParser()))
+    @StateObject var realmManager = RealmManager()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
@@ -52,7 +53,8 @@ struct AlbumDetailView: View {
                         }
                     }
                 }
-                
+                .navigationTitle(viewModel.albumDetail?.artist ?? "")
+                .navigationBarTitleDisplayMode(.inline)
                 //                ForEach(viewModel.albumDetail?.trackList ?? [], id: \.title) { track in
                 //                    HStack{
                 //                        Text("\(track.number)")
@@ -70,18 +72,26 @@ struct AlbumDetailView: View {
                     VStack(alignment: .leading){
                         Text(viewModel.albumDetail?.artist ?? "")
                             .font(.headline)
-                        Text(viewModel.albumDetail?.title ?? "")
+                        Text(viewModel.albumDetail?.title ?? "") 
                             .font(.title2)
                             .bold()
                     }
                     Spacer()
-                    Text(viewModel.albumDetail?.releaseYear ?? "")
-                        
+                    VStack(alignment: .trailing){
+                        Text(viewModel.albumDetail?.releaseYear ?? "")
+                        BookmarkButton(){
+                            if let albumToSave = viewModel.albumDetail {
+                                realmManager.save(for: albumToSave)
+                            }
+                        }
+                    }
                 }
                 .font(.callout)
                 .padding()
                 .frame(maxWidth: .infinity,alignment:.leading)
                 .offset(y: -30.0)
+                
+                    
                 Text("Similar artits")
                     .foregroundStyle(.white)
                     .font(.title2)

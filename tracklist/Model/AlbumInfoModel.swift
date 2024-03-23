@@ -1,4 +1,5 @@
-import Foundation
+import RealmSwift
+import SwiftUI
 
 struct AlbumInfo : Identifiable, Hashable{
     var id: UUID = UUID()
@@ -8,6 +9,17 @@ struct AlbumInfo : Identifiable, Hashable{
     var albumUrl: String?
     var imageUrl: String
 }
+
+
+class DBAlbumInfo : Object, ObjectKeyIdentifiable, Codable {
+    @Persisted(primaryKey: true) var id: ObjectId
+    @Persisted var artistTitle = ""
+    @Persisted var albumTitle = ""
+    @Persisted var albumUrl = ""
+    @Persisted var dateSaved = Date()
+}
+
+
 
 extension AlbumInfo {
     static var firstElement: AlbumInfo = {

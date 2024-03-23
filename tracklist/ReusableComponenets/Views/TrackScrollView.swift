@@ -3,6 +3,7 @@ import Kingfisher
 
 struct TrackScrollView: View {
     var tracks: [AlbumInfo]
+    var title: String
     private var splitTracks: ([AlbumInfo], [AlbumInfo]) {
         let half = tracks.count / 2
         let evenTracks = Array(tracks.prefix(half))
@@ -11,29 +12,28 @@ struct TrackScrollView: View {
     }
     
     var body: some View {
-        Group {
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVStack {
-                    HStack(alignment: .top) {
-                        VStack(spacing: 80){
-                            ForEach(splitTracks.0) { track in
-                                trackItemView(trackItem: track)
-                                    .padding(4)
-                            }
-                        }
-                        VStack(spacing: 40){
-                            ForEach(splitTracks.1) { track in
-                                trackItemView(trackItem: track)
-                                    .padding(4)
-                            }
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack {
+                HStack(alignment: .top) {
+                    VStack(spacing: 80){
+                        ForEach(splitTracks.0) { track in
+                            trackItemView(trackItem: track)
+                                .padding(4)
                         }
                     }
-                    .padding(.top, 45)
+                    VStack(spacing: 40){
+                        ForEach(splitTracks.1) { track in
+                            trackItemView(trackItem: track)
+                                .padding(4)
+                        }
+                    }
                 }
+                .padding(.top, 45)
             }
-            .frame(maxHeight: .infinity)
-            .darkModePreview()
         }
+        .frame(maxHeight: .infinity)
+        .darkModePreview()
+        .navigationTitle(title)
         
     }
     
@@ -83,7 +83,7 @@ struct TrackScrollView: View {
     ZStack{
         Color.black
             .ignoresSafeArea()
-        TrackScrollView(tracks: AlbumInfo.repeatedElements)
+        TrackScrollView(tracks: AlbumInfo.repeatedElements, title: "Singles")
         //            .padding()
     }
 }

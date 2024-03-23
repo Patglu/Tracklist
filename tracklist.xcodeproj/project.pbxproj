@@ -16,12 +16,15 @@
 		613C57D02B87B2C100EB7967 /* CDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C57CD2B87B2C100EB7967 /* CDView.swift */; };
 		613C57D12B87B2C100EB7967 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C57CE2B87B2C100EB7967 /* MotionManager.swift */; };
 		613C57D32B893CF700EB7967 /* HomeViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C57D22B893CF700EB7967 /* HomeViewV2.swift */; };
-		613C57D52B893FE400EB7967 /* ScratchyFilmOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C57D42B893FE400EB7967 /* ScratchyFilmOverlayView.swift */; };
 		613C57DC2B894CC600EB7967 /* Variablur in Frameworks */ = {isa = PBXBuildFile; productRef = 613C57DB2B894CC600EB7967 /* Variablur */; };
 		61532E702B16675C00459F22 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61532E6F2B16675C00459F22 /* AlbumDetailViewModel.swift */; };
 		6157BD442B82724E00424947 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157BD432B82724E00424947 /* GlassView.swift */; };
 		6157BD462B82938A00424947 /* GnodNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157BD452B82938A00424947 /* GnodNetworking.swift */; };
 		618152DA2BA232A100785A04 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 618152D92BA232A100785A04 /* Kingfisher */; };
+		618152DD2BA2476300785A04 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 618152DC2BA2476300785A04 /* Realm */; };
+		618152DF2BA2476300785A04 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 618152DE2BA2476300785A04 /* RealmSwift */; };
+		618152E22BA2490E00785A04 /* BookmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618152E12BA2490E00785A04 /* BookmarkButton.swift */; };
+		61835B7D2BAA222C00ACFC21 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61835B7C2BAA222C00ACFC21 /* FavouritesView.swift */; };
 		6196CF1D2B0A5CC700121470 /* DetailViewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196CF1C2B0A5CC700121470 /* DetailViewDataManager.swift */; };
 		61A472E22B01410900623BC3 /* tracklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472E12B01410900623BC3 /* tracklistApp.swift */; };
 		61A472E42B01410900623BC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A472E32B01410900623BC3 /* ContentView.swift */; };
@@ -38,6 +41,10 @@
 		61A99A102B0A4EEE00ED22A7 /* TrackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */; };
 		61A99A142B0A525F00ED22A7 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A99A132B0A525F00ED22A7 /* AlbumDetailView.swift */; };
 		61A99A162B0A54DF00ED22A7 /* AlbumDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A99A152B0A54DF00ED22A7 /* AlbumDetailModel.swift */; };
+		61B3397D2BA5A6D1001726E1 /* WaveCollapseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B3397C2BA5A6D1001726E1 /* WaveCollapseView.swift */; };
+		61B575062BACCCC500DF610F /* RealmServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B575052BACCCC500DF610F /* RealmServices.swift */; };
+		61B575082BACCD0400DF610F /* RealmServicesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B575072BACCD0400DF610F /* RealmServicesProtocols.swift */; };
+		61B5750A2BACCF4700DF610F /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B575092BACCF4700DF610F /* RealmManager.swift */; };
 		61C7850B2B04DBCE00C5E55D /* popOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C7850A2B04DBCE00C5E55D /* popOver.swift */; };
 		61F2AB7C2B8FACF200B969C6 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F2AB7B2B8FACF200B969C6 /* View+Extension.swift */; };
 		61F2AB7E2B8FB0D100B969C6 /* MetacriticNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F2AB7D2B8FB0D100B969C6 /* MetacriticNetworking.swift */; };
@@ -63,10 +70,11 @@
 		613C57CD2B87B2C100EB7967 /* CDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDView.swift; path = "../../../../../Downloads/e1e7e6bfed0362bc510c1766d5dc1428-6d408d6570c4cb42caa8f32f6582e0dadbe57239/CDView.swift"; sourceTree = "<group>"; };
 		613C57CE2B87B2C100EB7967 /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionManager.swift; path = "../../../../../Downloads/e1e7e6bfed0362bc510c1766d5dc1428-6d408d6570c4cb42caa8f32f6582e0dadbe57239/MotionManager.swift"; sourceTree = "<group>"; };
 		613C57D22B893CF700EB7967 /* HomeViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewV2.swift; sourceTree = "<group>"; };
-		613C57D42B893FE400EB7967 /* ScratchyFilmOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchyFilmOverlayView.swift; sourceTree = "<group>"; };
 		61532E6F2B16675C00459F22 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		6157BD432B82724E00424947 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassView.swift; sourceTree = "<group>"; };
 		6157BD452B82938A00424947 /* GnodNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnodNetworking.swift; sourceTree = "<group>"; };
+		618152E12BA2490E00785A04 /* BookmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkButton.swift; sourceTree = "<group>"; };
+		61835B7C2BAA222C00ACFC21 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 		6196CF1C2B0A5CC700121470 /* DetailViewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewDataManager.swift; sourceTree = "<group>"; };
 		61A472DE2B01410900623BC3 /* tracklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tracklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A472E12B01410900623BC3 /* tracklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tracklistApp.swift; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 		61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackScrollView.swift; sourceTree = "<group>"; };
 		61A99A132B0A525F00ED22A7 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
 		61A99A152B0A54DF00ED22A7 /* AlbumDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailModel.swift; sourceTree = "<group>"; };
+		61B3397C2BA5A6D1001726E1 /* WaveCollapseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveCollapseView.swift; sourceTree = "<group>"; };
+		61B575052BACCCC500DF610F /* RealmServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServices.swift; sourceTree = "<group>"; };
+		61B575072BACCD0400DF610F /* RealmServicesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServicesProtocols.swift; sourceTree = "<group>"; };
+		61B575092BACCF4700DF610F /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		61C7850A2B04DBCE00C5E55D /* popOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popOver.swift; sourceTree = "<group>"; };
 		61F2AB7B2B8FACF200B969C6 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		61F2AB7D2B8FB0D100B969C6 /* MetacriticNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetacriticNetworking.swift; sourceTree = "<group>"; };
@@ -105,6 +117,8 @@
 			files = (
 				618152DA2BA232A100785A04 /* Kingfisher in Frameworks */,
 				61A99A0D2B094EF000ED22A7 /* SwiftSoup in Frameworks */,
+				618152DD2BA2476300785A04 /* Realm in Frameworks */,
+				618152DF2BA2476300785A04 /* RealmSwift in Frameworks */,
 				613C57DC2B894CC600EB7967 /* Variablur in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				61532E6F2B16675C00459F22 /* AlbumDetailViewModel.swift */,
+				61B575092BACCF4700DF610F /* RealmManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -154,6 +169,25 @@
 				61F2AB922B94F58600B969C6 /* CustomPlaceholderView.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		618152E02BA248D100785A04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61C7850A2B04DBCE00C5E55D /* popOver.swift */,
+				61A472F22B01483D00623BC3 /* HighlightedText.swift */,
+				61F2AB902B94EA9B00B969C6 /* HomeCard.swift */,
+				61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		61835B7B2BAA220C00ACFC21 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				61835B7C2BAA222C00ACFC21 /* FavouritesView.swift */,
+			);
+			path = Favourites;
 			sourceTree = "<group>";
 		};
 		61A472D52B01410900623BC3 = {
@@ -175,6 +209,7 @@
 		61A472E02B01410900623BC3 /* tracklist */ = {
 			isa = PBXGroup;
 			children = (
+				61B575042BACCCAD00DF610F /* Services */,
 				6113470F2B4B18E300D651CD /* Repositories */,
 				61532E6E2B16674200459F22 /* ViewModel */,
 				61A99A0E2B0A4ECA00ED22A7 /* ReusableComponenets */,
@@ -202,6 +237,7 @@
 		61A472EF2B01417A00623BC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				61835B7B2BAA220C00ACFC21 /* Favourites */,
 				6157BD422B82723700424947 /* ViewModifiers */,
 				61A99A122B0A523C00ED22A7 /* DetailViews */,
 				61A99A112B0A521200ED22A7 /* HomeView */,
@@ -255,16 +291,14 @@
 		61A99A0E2B0A4ECA00ED22A7 /* ReusableComponenets */ = {
 			isa = PBXGroup;
 			children = (
+				618152E02BA248D100785A04 /* Views */,
 				613C57CC2B87B2C100EB7967 /* cd.metal */,
 				61F2AB882B94914400B969C6 /* GrainGradient.metal */,
 				613C57CD2B87B2C100EB7967 /* CDView.swift */,
 				61F2AB8A2B94914900B969C6 /* BackgroundMaterial.swift */,
 				613C57CE2B87B2C100EB7967 /* MotionManager.swift */,
-				61C7850A2B04DBCE00C5E55D /* popOver.swift */,
-				61A472F22B01483D00623BC3 /* HighlightedText.swift */,
-				61A99A0F2B0A4EEE00ED22A7 /* TrackScrollView.swift */,
-				613C57D42B893FE400EB7967 /* ScratchyFilmOverlayView.swift */,
-				61F2AB902B94EA9B00B969C6 /* HomeCard.swift */,
+				618152E12BA2490E00785A04 /* BookmarkButton.swift */,
+				61B3397C2BA5A6D1001726E1 /* WaveCollapseView.swift */,
 			);
 			path = ReusableComponenets;
 			sourceTree = "<group>";
@@ -285,6 +319,15 @@
 				61A99A132B0A525F00ED22A7 /* AlbumDetailView.swift */,
 			);
 			path = DetailViews;
+			sourceTree = "<group>";
+		};
+		61B575042BACCCAD00DF610F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				61B575052BACCCC500DF610F /* RealmServices.swift */,
+				61B575072BACCD0400DF610F /* RealmServicesProtocols.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		61F2AB812B91D16400B969C6 /* Upcoming Releases */ = {
@@ -316,6 +359,8 @@
 				61A99A0C2B094EF000ED22A7 /* SwiftSoup */,
 				613C57DB2B894CC600EB7967 /* Variablur */,
 				618152D92BA232A100785A04 /* Kingfisher */,
+				618152DC2BA2476300785A04 /* Realm */,
+				618152DE2BA2476300785A04 /* RealmSwift */,
 			);
 			productName = tracklist;
 			productReference = 61A472DE2B01410900623BC3 /* tracklist.app */;
@@ -349,6 +394,7 @@
 				61A99A0B2B094EF000ED22A7 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 				613C57DA2B894CC600EB7967 /* XCRemoteSwiftPackageReference "Variablur" */,
 				618152D82BA232A100785A04 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				618152DB2BA2476300785A04 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 61A472DF2B01410900623BC3 /* Products */;
 			projectDirPath = "";
@@ -381,6 +427,7 @@
 				611347062B4B148500D651CD /* NetworkingProtocols .swift in Sources */,
 				61F2AB802B8FB3B500B969C6 /* UpcommingReleaseModel.swift in Sources */,
 				61A472FA2B014EF500623BC3 /* TrackResponseModel.swift in Sources */,
+				61835B7D2BAA222C00ACFC21 /* FavouritesView.swift in Sources */,
 				61F2AB8D2B94970000B969C6 /* CardModel.swift in Sources */,
 				61A99A102B0A4EEE00ED22A7 /* TrackScrollView.swift in Sources */,
 				613C57CF2B87B2C100EB7967 /* cd.metal in Sources */,
@@ -388,11 +435,14 @@
 				61F2AB932B94F58600B969C6 /* CustomPlaceholderView.swift in Sources */,
 				61A99A0A2B094E0300ED22A7 /* AlbumInfoModel.swift in Sources */,
 				6113470C2B4B15BD00D651CD /* APIRequestHandler.swift in Sources */,
+				61B5750A2BACCF4700DF610F /* RealmManager.swift in Sources */,
 				61F2AB7E2B8FB0D100B969C6 /* MetacriticNetworking.swift in Sources */,
+				618152E22BA2490E00785A04 /* BookmarkButton.swift in Sources */,
 				613C57D32B893CF700EB7967 /* HomeViewV2.swift in Sources */,
 				61A472E22B01410900623BC3 /* tracklistApp.swift in Sources */,
 				61A472F32B01483D00623BC3 /* HighlightedText.swift in Sources */,
 				613C57D12B87B2C100EB7967 /* MotionManager.swift in Sources */,
+				61B3397D2BA5A6D1001726E1 /* WaveCollapseView.swift in Sources */,
 				611347112B4B18FF00D651CD /* AlbumDetailRepository.swift in Sources */,
 				61F2AB912B94EA9B00B969C6 /* HomeCard.swift in Sources */,
 				61F2AB832B91D18700B969C6 /* UpcommingReleases.swift in Sources */,
@@ -401,6 +451,7 @@
 				61F2AB892B94914400B969C6 /* GrainGradient.metal in Sources */,
 				6157BD442B82724E00424947 /* GlassView.swift in Sources */,
 				61F2AB952B94F66300B969C6 /* Array+Extension.swift in Sources */,
+				61B575082BACCD0400DF610F /* RealmServicesProtocols.swift in Sources */,
 				61F2AB8B2B94914900B969C6 /* BackgroundMaterial.swift in Sources */,
 				6196CF1D2B0A5CC700121470 /* DetailViewDataManager.swift in Sources */,
 				6113470A2B4B157900D651CD /* HTMLContentFetcher.swift in Sources */,
@@ -408,9 +459,9 @@
 				613C57D02B87B2C100EB7967 /* CDView.swift in Sources */,
 				61A472FC2B014F3C00623BC3 /* NetworkingManager.swift in Sources */,
 				6113470E2B4B164C00D651CD /* HTMLParser.swift in Sources */,
-				613C57D52B893FE400EB7967 /* ScratchyFilmOverlayView.swift in Sources */,
 				61A472FF2B01538C00623BC3 /* DataManager.swift in Sources */,
 				61C7850B2B04DBCE00C5E55D /* popOver.swift in Sources */,
+				61B575062BACCCC500DF610F /* RealmServices.swift in Sources */,
 				61532E702B16675C00459F22 /* AlbumDetailViewModel.swift in Sources */,
 				61F2AB852B91D2EE00B969C6 /* UpcommingReleasesRepository.swift in Sources */,
 				61F2AB7C2B8FACF200B969C6 /* View+Extension.swift in Sources */,
@@ -638,6 +689,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		618152DB2BA2476300785A04 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.48.0;
+			};
+		};
 		61A99A0B2B094EF000ED22A7 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
@@ -658,6 +717,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 618152D82BA232A100785A04 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		618152DC2BA2476300785A04 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618152DB2BA2476300785A04 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		618152DE2BA2476300785A04 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618152DB2BA2476300785A04 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 		61A99A0C2B094EF000ED22A7 /* SwiftSoup */ = {
 			isa = XCSwiftPackageProductDependency;
